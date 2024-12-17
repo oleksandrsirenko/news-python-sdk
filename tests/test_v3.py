@@ -15,8 +15,8 @@ project_root = Path(__file__).parent
 sys.path.append(str(project_root))
 
 # Import the SDK package
-from sdks.python.client import NewscatcherApi
-from sdks.python.environment import NewscatcherApiEnvironment
+from src.python.client import NewscatcherApi
+from src.python.environment import NewscatcherApiEnvironment
 from pydantic import ValidationError
 
 
@@ -141,7 +141,7 @@ class TestNewsCatcherSDK(unittest.TestCase):
 
             if search_response.articles and len(search_response.articles) > 0:
                 article_link = search_response.articles[0].link
-                from sdks.python.searchlink.types.search_link_post_request_links import (
+                from src.python.searchlink.types.search_link_post_request_links import (
                     SearchLinkPostRequestLinks,
                 )
 
